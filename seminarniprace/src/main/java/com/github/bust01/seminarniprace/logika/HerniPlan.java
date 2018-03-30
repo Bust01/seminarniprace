@@ -1,5 +1,6 @@
 package com.github.bust01.seminarniprace.logika;
 
+import java.util.Observable;
 /**
  *  Class HerniPlan - třída představující mapu a stav adventury.
  * 
@@ -11,7 +12,7 @@ package com.github.bust01.seminarniprace.logika;
  *@author     Tomáš Bušek
  *@version    1.0
  */
-public class HerniPlan {
+public class HerniPlan extends Observable {
     
     private Prostor aktualniProstor;
     private Prostor viteznyProstor;
@@ -167,6 +168,8 @@ public class HerniPlan {
      */
     public void setAktualniProstor(Prostor prostor) {
        aktualniProstor = prostor;
+       this.setChanged();
+       this.notifyObservers();
     }
     
      /**
