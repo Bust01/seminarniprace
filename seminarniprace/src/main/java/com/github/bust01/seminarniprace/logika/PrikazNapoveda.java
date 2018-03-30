@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /**
  *  Třída PrikazNapoveda implementuje pro hru příkaz napoveda.
@@ -29,7 +29,6 @@ class PrikazNapoveda implements IPrikaz {
      *  
      *  @return napoveda ke hre
      */
-    @Override
     public String provedPrikaz(String... parametry) {
         return "Tvým úkolem je zachránit Žižkovice od bratrů Makromorta a Mikromorta\n"
         + "a nastolit tak klidné zkouškové období.\n"
@@ -43,8 +42,7 @@ class PrikazNapoveda implements IPrikaz {
      *  
      *  @ return nazev prikazu
      */
-    @Override
-      public String getNazev() {
+    public String getNazev() {
         return NAZEV;
      }
 

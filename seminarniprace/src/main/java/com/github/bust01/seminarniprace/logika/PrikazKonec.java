@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /**
  *  Třída PrikazKonec implementuje pro hru příkaz konec.
@@ -9,7 +9,7 @@ package logika;
  *  
  */
 
-class PrikazKonec implements IPrikaz {
+public class PrikazKonec implements IPrikaz {
 
     private static final String NAZEV = "konec";
 
@@ -31,7 +31,6 @@ class PrikazKonec implements IPrikaz {
      * @return zpráva, kterou vypíše hra hráči
      */
 
-    @Override
     public String provedPrikaz(String... parametry) {
         if (parametry.length > 0) {
             return "Ukončit co? Nechápu, proč jste zadal druhé slovo.";
@@ -47,7 +46,6 @@ class PrikazKonec implements IPrikaz {
      *  
      *  @ return nazev prikazu
      */
-    @Override
     public String getNazev() {
         return NAZEV;
     }

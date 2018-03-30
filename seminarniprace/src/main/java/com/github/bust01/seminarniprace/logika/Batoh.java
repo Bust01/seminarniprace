@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 import java.util.*;
 
 /*******************************************************************************

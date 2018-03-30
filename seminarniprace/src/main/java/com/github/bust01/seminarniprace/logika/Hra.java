@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /**
  *  Třída Hra - třída představující logiku adventury.

@@ -1,8 +1,11 @@
-package logika;
+package com.github.bust01.seminarniprace;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.github.bust01.seminarniprace.logika.Vec;
+
 import static org.junit.Assert.*;
 
 /*******************************************************************************

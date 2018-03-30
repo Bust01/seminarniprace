@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /*******************************************************************************
  * Třída postava nám uchovává informace o použitých postavách ve hře.

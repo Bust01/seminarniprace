@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /*******************************************************************************
  * Instance třídy PrikazSeber představují ...
@@ -30,7 +30,6 @@ public class PrikazProhledej implements IPrikaz
      *                        která se ma prozkoumat
      *@return zpráva, která se vypíše hráčovi
      */ 
-    @Override
     public String provedPrikaz(String... parametry) {
         if (parametry.length == 0) {
             return "Co mám prohledat? Buď prosímtě přesnější!";
@@ -54,7 +53,6 @@ public class PrikazProhledej implements IPrikaz
      *  
      *  @ return nazev prikazu
      */
-    @Override
     public String getNazev() {
         return NAZEV;
     }

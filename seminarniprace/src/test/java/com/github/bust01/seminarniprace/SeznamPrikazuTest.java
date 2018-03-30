@@ -1,9 +1,14 @@
-package logika;
+package com.github.bust01.seminarniprace;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import com.github.bust01.seminarniprace.logika.Hra;
+import com.github.bust01.seminarniprace.logika.PrikazJdi;
+import com.github.bust01.seminarniprace.logika.PrikazKonec;
+import com.github.bust01.seminarniprace.logika.SeznamPrikazu;
 
 /*******************************************************************************
  * Testovací třída SeznamPrikazuTest slouží ke komplexnímu otestování třídy  

@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /**
  *  Třída PrikazJdi implementuje pro hru příkaz jdi.
@@ -7,7 +7,7 @@ package logika;
  *@author     Tomáš Bušek
  *@version    1.0
  */
-class PrikazJdi implements IPrikaz {
+public class PrikazJdi implements IPrikaz {
     private static final String NAZEV = "jdi";
     private HerniPlan plan;
     
@@ -29,7 +29,6 @@ class PrikazJdi implements IPrikaz {
      *                         do kterého se má jít.
      *@return zpráva, kterou vypíše hra hráči
      */ 
-    @Override
     public String provedPrikaz(String... parametry) {
         if (parametry.length == 0) {
             // pokud chybí druhé slovo (sousední prostor), tak ....
@@ -60,7 +59,6 @@ class PrikazJdi implements IPrikaz {
      *  
      *  @ return nazev prikazu
      */
-    @Override
     public String getNazev() {
         return NAZEV;
     }

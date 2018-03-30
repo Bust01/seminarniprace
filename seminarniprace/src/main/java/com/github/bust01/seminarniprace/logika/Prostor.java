@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -38,8 +38,8 @@ public class Prostor {
     public Prostor(String nazev, String popis) {
         this.nazev = nazev;
         this.popis = popis;
-        vychody = new HashSet<>();     
-        veci = new HashSet<>();
+        vychody = new HashSet<Prostor>();     
+        veci = new HashSet<Vec>();
         this.jeZamknuty = jeZamknuty;
         this.isViditelny = isViditelny;
         vycetVeci = new HashMap<String, Vec>();

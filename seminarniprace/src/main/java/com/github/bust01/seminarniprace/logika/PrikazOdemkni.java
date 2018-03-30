@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /*******************************************************************************
  * Instance třídy PrikazOdemkni představují ...
@@ -30,7 +30,6 @@ public class PrikazOdemkni implements IPrikaz
      * 
      * @return zpráva vypsaná pro hráče
      */
-    @Override
     public String provedPrikaz(String... parametry) {
         if (parametry.length == 0) {
             return "Co mám odemknout?";
@@ -65,7 +64,6 @@ public class PrikazOdemkni implements IPrikaz
      *  
      *  @ return název příkazu
      */
-    @Override
     public String getNazev() {
         return NAZEV;
     }

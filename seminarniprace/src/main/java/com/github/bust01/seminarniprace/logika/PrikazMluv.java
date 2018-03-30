@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /*******************************************************************************
  * Instance třídy PrikazMluv představují ...
@@ -23,7 +23,6 @@ public class PrikazMluv implements IPrikaz
      *@param parametr - jmeno postavy, se kterou se má hovořit
      *@return proslov postavy, který se vypíše hráči
      */ 
-    @Override
     public String provedPrikaz(String... parametry) { 
         if (parametry.length == 0) {
             return "S kým mám hovořit?";
@@ -45,7 +44,6 @@ public class PrikazMluv implements IPrikaz
      *  
      *  @ return nazev prikazu
      */
-    @Override
     public String getNazev() {
         return NAZEV;
     }

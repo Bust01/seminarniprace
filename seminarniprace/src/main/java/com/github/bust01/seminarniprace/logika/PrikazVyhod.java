@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /*******************************************************************************
  * Instance třídy PrikazVyhod implementuje pro naší jednoduchou textovou hru příkaz vyhoď.

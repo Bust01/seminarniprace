@@ -1,7 +1,7 @@
-package text;
+package com.github.bust01.seminarniprace.ui;
 
 import java.util.Scanner;
-import logika.IHra;
+import com.github.bust01.seminarniprace.logika.IHra;
 import java.io.*;
 /**
  *  Class TextoveRozhrani

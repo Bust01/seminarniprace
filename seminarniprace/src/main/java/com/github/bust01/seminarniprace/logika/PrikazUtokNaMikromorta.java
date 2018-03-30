@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /*******************************************************************************
  * Instance třídy PrikazUtokNaMikromorta představují ...
@@ -29,7 +29,6 @@ public class PrikazUtokNaMikromorta implements IPrikaz
      * 
      *@return fraze, která se vypíše hráči.
      */ 
-    @Override
     public String provedPrikaz(String... parametry){  
           Prostor aktualniProstor = plan.getAktualniProstor();
  if (aktualniProstor.getNazev().equals("Vencovskeho_komnaty")) {
@@ -68,7 +67,6 @@ public class PrikazUtokNaMikromorta implements IPrikaz
      *  
      *  @ return nazev prikazu
      */
-    @Override
     public String getNazev() {
         return NAZEV;
     }  

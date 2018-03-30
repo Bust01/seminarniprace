@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /*******************************************************************************
  * Instance třídy PrikazUkazkaBatohu představují ...
@@ -18,7 +18,7 @@ class PrikazUkazBatoh implements IPrikaz {
         this.batoh = batoh;
     }
 
-    @Override
+    
     /**
      * Metoda vracející řetězec, ve kterém je vypsaný obsah batohu 
      * 
@@ -33,8 +33,7 @@ class PrikazUkazBatoh implements IPrikaz {
      *  
      *  @ return nazev prikazu
      */
-    @Override
-      public String getNazev() {
+    public String getNazev() {
         return NAZEV;
      }
 

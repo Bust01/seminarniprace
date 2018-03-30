@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,14 +15,14 @@ import java.util.Map;
  *@author     Tomáš Bušek
  *@version    1.0
  */
-class SeznamPrikazu {
+public class SeznamPrikazu {
     private  Map<String,IPrikaz> mapaSPrikazy;
     
     /**
      * Konstruktor
      */
     public SeznamPrikazu() {
-        mapaSPrikazy = new HashMap<>();
+        mapaSPrikazy = new HashMap<String, IPrikaz>();
     }
      
     /**

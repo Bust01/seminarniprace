@@ -1,4 +1,4 @@
-package logika;
+package com.github.bust01.seminarniprace.logika;
 
 /*******************************************************************************
  * Instance třídy PrikazUtokNaArachnolorda představují ...
@@ -29,8 +29,7 @@ public class PrikazUtokNaArachnolorda implements IPrikaz
      * 
      *@return fraze, která se vypíše hráči.
      */ 
-    @Override
-     public String provedPrikaz(String... parametry){   
+    public String provedPrikaz(String... parametry){   
         Prostor aktualniProstor = plan.getAktualniProstor();
         if (aktualniProstor.getNazev().equals("pavoučí_hnízdo")) {
         Prisera Arachnolord = aktualniProstor.najdiPriseru("Arachnolord");
@@ -58,7 +57,6 @@ public class PrikazUtokNaArachnolorda implements IPrikaz
      *  
      *  @ return nazev prikazu
      */
-    @Override
     public String getNazev() {
         return NAZEV;
     }
