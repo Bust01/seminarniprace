@@ -151,7 +151,7 @@ public class HomeController extends GridPane implements Observer {
 		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPostav());
 		seznamPriser.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPriser());
 		
-		Image image = new Image("/mapa.png");
+		Image image = new Image("/Harryho_mistnost.png");
 		mapaImageView.setImage(image);
 		hra.getHerniPlan().addObserver(this);
 	}

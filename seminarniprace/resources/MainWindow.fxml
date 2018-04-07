@@ -59,7 +59,7 @@
          </children>
       </HBox>
       <Label text="Batoh" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-      <GridPane GridPane.rowIndex="2" GridPane.rowSpan="3">
+      <GridPane fx:id="batohObsah" GridPane.rowIndex="2" GridPane.rowSpan="3">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
          </columnConstraints>
@@ -67,11 +67,11 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <ImageView fitHeight="68.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="68.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="68.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="68.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="68.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageView1" fitHeight="68.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+            <ImageView fx:id="imageView2" fitHeight="68.0" fitWidth="115.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" y="150.0" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+            <ImageView fx:id="imageView3" fitHeight="68.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="imageView4" fitHeight="68.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" />
+            <ImageView fx:id="imageView5" fitHeight="67.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
          </children>
       </GridPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4">
