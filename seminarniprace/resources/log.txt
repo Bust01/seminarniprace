@@ -1,0 +1,12 @@
+Vítejte!
+V Žižkovicích, ve světě čar a ekonomie, vládne chaos.
+Mocný nepřítel Makromort ukradl svatý kámen, díky kterému může získat nadvládu nad celou školou a způsobit neúspěch všech studentů v nadcházejícím zkouškovém období.
+Kámen Vysoké školy ekonomické, jak se onomu artefaktu říká, drží uvnitř zkušebny, do které se nyní neodváží nikdo vstoupit
+Úspěch všech tvých spolužáků, včetně tebe, leží na tvých bedrech.
+Dokážeš sebrat odvahu a postavit se Makromortovi?
+
+Jsi v mistnosti/prostoru :Místnost, ve které bydlí slavný Harry Lustter.
+východy: schodiště
+V této místnosti se nachází tyto věci: postel, začátečnická_truhla, 
+V místnosti se nachází tyto postavy: 
+V místnosti se nachází tyto prisery: 

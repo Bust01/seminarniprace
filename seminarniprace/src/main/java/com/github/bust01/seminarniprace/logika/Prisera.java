@@ -46,4 +46,9 @@ public class Prisera
     {
         return isZivy = false;
     }
+    
+    public String toString() 
+    {
+   	 return jmeno;
+    }
 }

@@ -7,7 +7,7 @@ import java.util.*;
  * @author    Tomáš Bušek
  * @version   1.0
  */
-public class Batoh
+public class Batoh 
 {
     
     public Map<String, Vec> sezVeci;  

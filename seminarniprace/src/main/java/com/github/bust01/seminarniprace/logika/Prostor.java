@@ -1,10 +1,7 @@
 package com.github.bust01.seminarniprace.logika;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
-import java.util.HashSet;
 import java.util.*;
+
 /**
  * Trida Prostor - popisuje jednotlivé prostory (místnosti) hry
  *
@@ -22,12 +19,15 @@ public class Prostor {
     private String popis;
     private Set<Prostor> vychody;
     private Set<Vec> veci;
+    private Set<Postava> postavy;
+    private Set<Prisera> prisery;
     private Vec klic;
     private boolean jeZamknuty = false;
     public boolean isViditelny = true;
     private Map<String, Vec> vycetVeci;
     private Map<String, Postava> vycetPostav;
     private Map<String, Prisera> vycetPriser;
+    
     /**
      * Vytvoření prostoru se zadaným popisem, např. "Harryho_místnost", "rajský_dvůr", "schodiště"
      *
@@ -40,6 +40,8 @@ public class Prostor {
         this.popis = popis;
         vychody = new HashSet<Prostor>();     
         veci = new HashSet<Vec>();
+        postavy = new HashSet<Postava>();     
+        prisery = new HashSet<Prisera>();
         this.jeZamknuty = jeZamknuty;
         this.isViditelny = isViditelny;
         vycetVeci = new HashMap<String, Vec>();
@@ -167,6 +169,15 @@ public class Prostor {
     vracenyText += "\n";
     return vracenyText;  
     }
+        
+        private String popisPostav() {
+            String vracenyText = "Postavy:";
+            for (Postava clovek : postavy) {
+               vracenyText += " " + clovek.getJmeno();
+        }
+        vracenyText += "\n";
+        return vracenyText;  
+        }
 
      /**
      * Vrací prostor, který sousedí s aktuálním prostorem a jehož název je zadán
@@ -202,6 +213,21 @@ public class Prostor {
         return Collections.unmodifiableCollection(vychody);
     }
     
+    public Collection<Vec> getSeznamVeci()
+    {
+    	List<Vec> list = new ArrayList<Vec>(vycetVeci.values());
+    	return list;
+    }
+    
+    public Collection<Postava> getSeznamPostav() {    	
+        return Collections.unmodifiableCollection(postavy);
+    }
+    
+    public Collection<Prisera> getSeznamPriser()  {
+    	List<Prisera> listt = new ArrayList<Prisera>(vycetPriser.values());
+    	return listt;
+    }
+    
  
      /**
      * Zjistí, zda se daná věc nachází v prostoru.
@@ -226,6 +252,7 @@ public class Prostor {
      */ 
     public void vlozVec(Vec vec){
         vycetVeci.put(vec.getNazev(),vec);
+        veci.add(vec);
     }
     
     /**
@@ -341,6 +368,7 @@ public class Prostor {
     public void vlozPostavu(Postava postava)
     {
         vycetPostav.put(postava.getJmeno(), postava);
+        postavy.add(postava);
     }
     
     /**
@@ -357,6 +385,7 @@ public class Prostor {
     public void vlozPriseru(Prisera prisera)
     {
         vycetPriser.put(prisera.getJmeno(), prisera);
+        prisery.add(prisera);
     }
     
     /**
@@ -390,6 +419,12 @@ public class Prostor {
      */
     public Vec odeberVec(String nazev) {
         return vycetVeci.remove(nazev); 
+    }
+    
+    @Override
+    public String toString() 
+    {
+    	return nazev;
     }
 }
    

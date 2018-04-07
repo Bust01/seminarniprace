@@ -1,7 +1,5 @@
 package com.github.bust01.seminarniprace.main;
 
-import java.io.File;
-
 import com.github.bust01.seminarniprace.logika.*;
 import com.github.bust01.seminarniprace.ui.HomeController;
 import com.github.bust01.seminarniprace.ui.TextoveRozhrani;
@@ -46,7 +44,6 @@ public class Start extends Application
 //        TextoveRozhrani ui = new TextoveRozhrani(hra);
 //        ui.hraj();
     	
-    	launch(args);
     }
     
     /**
@@ -56,7 +53,7 @@ public class Start extends Application
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("../ui/MainWindow.fxml"));    	
+    	loader.setLocation(getClass().getResource("/MainWindow.fxml"));    	
     	Parent root = loader.load();
 
     	HomeController controller = loader.getController();
@@ -65,7 +62,7 @@ public class Start extends Application
     	
     	primaryStage.setScene(new Scene(root));
     	primaryStage.show();
-    	primaryStage.setTitle("Základní adventura");
+    	primaryStage.setTitle("Harry Lustter");
 		
 	}
 }

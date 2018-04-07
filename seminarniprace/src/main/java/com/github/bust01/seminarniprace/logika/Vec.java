@@ -133,4 +133,9 @@ public Vec vyberVec(String nazev) {
         }
         return nazvy;
     }
+     
+     public String toString() 
+     {
+    	 return nazev;
+     }
 }

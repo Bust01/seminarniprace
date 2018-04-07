@@ -44,5 +44,10 @@ public class Postava
     {
         this.veta = novaVeta;
     }
+    
+    public String toString() 
+    {
+   	 return jmeno;
+    }
 }
    
