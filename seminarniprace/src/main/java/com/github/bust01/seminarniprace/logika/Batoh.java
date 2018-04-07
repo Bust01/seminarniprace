@@ -7,7 +7,7 @@ import java.util.*;
  * @author    Tomáš Bušek
  * @version   1.0
  */
-public class Batoh 
+public class Batoh
 {
     
     public Map<String, Vec> sezVeci;  
@@ -26,6 +26,11 @@ public class Batoh
      */     
     public Vec getVec(String nazev) {
         return sezVeci.get(nazev);
+    }
+    
+    public Collection<Vec> getSezVeci()  {
+    	List<Vec> listtt = new ArrayList<Vec>(sezVeci.values());
+    	return listtt;
     }
     
 /**
@@ -101,6 +106,7 @@ public boolean vlozVec(Vec vec){
         }
         return false;
     }
+
 
 }
 

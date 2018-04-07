@@ -83,15 +83,14 @@ public class HomeController extends GridPane implements Observer {
 			textVstup.setDisable(true);
 			odesli.setDisable(true);
 		}
-		
-		
 		seznamVeci.getItems().clear();				
 		seznamVeci.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamVeci());
 		seznamPostav.getItems().clear();				
 		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPostav());
 		seznamPriser.getItems().clear();				
 		seznamPriser.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPriser());
-		
+		Image image = new Image("/" + hra.getHerniPlan().getAktualniProstor() + ".png");
+		mapaImageView.setImage(image);
 	}
 	
 	public void zobrazNapovedu(ActionEvent event) 
@@ -151,10 +150,10 @@ public class HomeController extends GridPane implements Observer {
 		seznamVeci.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamVeci());
 		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPostav());
 		seznamPriser.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPriser());
-		hra.getHerniPlan().addObserver(this);
 		
 		Image image = new Image("/mapa.png");
 		mapaImageView.setImage(image);
+		hra.getHerniPlan().addObserver(this);
 	}
 
 	@Override
