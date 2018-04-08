@@ -18,7 +18,7 @@ public class PrikazDaruj implements IPrikaz
     public PrikazDaruj(HerniPlan plan, Batoh batoh)
     {
         this.plan = plan;
-        this.batoh = batoh;
+        this.batoh = plan.getBatoh();
         
     }
 

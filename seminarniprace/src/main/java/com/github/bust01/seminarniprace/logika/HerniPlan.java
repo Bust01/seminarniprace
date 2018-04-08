@@ -194,7 +194,7 @@ public class HerniPlan extends Observable {
      * Metoda, která vrací batoh.
      */
     public Batoh getBatoh() {
-        return batoh;
+        return this.batoh;
     }
     
     public boolean isVyhra() {

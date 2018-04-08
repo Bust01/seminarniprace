@@ -9,14 +9,18 @@ import java.util.*;
  */
 public class Batoh
 {
-    
     public Map<String, Vec> sezVeci;  
     private static final int KapacitaBatohu = 5; 
+    private List<Vec> obsahBatohu; 
+    
+    
+    
     /**
      * Konstruktor třídy
      */
     public Batoh() {
         sezVeci = new HashMap <String, Vec> ();
+        obsahBatohu = new ArrayList<Vec>();
     }
 
     /**
@@ -28,10 +32,21 @@ public class Batoh
         return sezVeci.get(nazev);
     }
     
-    public Collection<Vec> getSezVeci()  {
+    public List<Vec> getSezVeci()  {
     	List<Vec> listtt = new ArrayList<Vec>(sezVeci.values());
     	return listtt;
     }
+    
+    public List<Vec> getObsahBatohu()
+    {
+    	return obsahBatohu;
+    }
+    
+    public Map<String, Vec> getMapaBatoh()
+    {
+    	return sezVeci;
+    }
+    
     
 /**
      * Metoda přidá věc do batohu, pokud v něm je místo.
@@ -43,6 +58,7 @@ public class Batoh
 public boolean vlozVec(Vec vec){
         if(jeMisto() && (vec.jePrenositelna())){
             sezVeci.put(vec.getNazev(),vec);
+            obsahBatohu.add(vec);
             return true;
         }
         else{
@@ -61,7 +77,8 @@ public boolean vlozVec(Vec vec){
         Vec vyhozenaVec = null;
         if (sezVeci.containsKey(nazev)) {
             vyhozenaVec = sezVeci.get(nazev);
-            sezVeci.remove(nazev);
+            sezVeci.remove(nazev);            
+            obsahBatohu.remove(vyhozenaVec);
         }
         return vyhozenaVec;  
     } 
@@ -106,7 +123,5 @@ public boolean vlozVec(Vec vec){
         }
         return false;
     }
-
-
 }
 

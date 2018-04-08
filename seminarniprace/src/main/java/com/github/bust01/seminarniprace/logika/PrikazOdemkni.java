@@ -17,7 +17,7 @@ public class PrikazOdemkni implements IPrikaz
      */
     public PrikazOdemkni(HerniPlan plan, Batoh batoh){  
         this.plan = plan;
-        this.batoh = batoh;
+        this.batoh = plan.getBatoh();
     }
 
 

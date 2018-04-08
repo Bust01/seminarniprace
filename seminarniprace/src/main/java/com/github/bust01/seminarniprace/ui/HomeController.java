@@ -1,13 +1,11 @@
 package com.github.bust01.seminarniprace.ui;
 
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import com.github.bust01.seminarniprace.logika.IHra;
@@ -41,7 +39,7 @@ import javafx.stage.Stage;
  * Kontroler, který zprostředkovává komunikaci mezi grafikou
  * a logikou adventury
  * 
- * @author Filip Vencovsky
+ * @author Bušek Tomáš
  *
  */
 @SuppressWarnings("deprecation")
@@ -64,13 +62,46 @@ public class HomeController extends GridPane implements Observer {
 	@FXML private WebView napovedaHTML;
 	@FXML private AnchorPane napovedaOkno;
 	@FXML private ImageView mapaImageView;
+	@FXML private ImageView img1;
+	@FXML private ImageView img2;
+	@FXML private ImageView img3;
+	@FXML private ImageView img4;
+	@FXML private ImageView img5;
+	
 	
 	private IHra hra;
+	
+	private List<Vec> batohObsah;
+	private ImageView imgView;
+	
+	ImageView[] imageArray = new ImageView[] { img1, img2 ,img3 ,img4 ,img5 };
+	
+	
+	/**
+	 * Metoda, která inicializuje hru.
+	 * Načítá mapu, která označuje začínající prostor
+	 */
+	
+	public void inicializuj(IHra hra)
+	{
+		this.hra = hra;
+		textVypis.setText(hra.vratUvitani());
+		seznamMistnosti.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getVychody());
+		seznamVeci.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamVeci());
+		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPostav());
+		seznamPriser.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPriser());
+		
+		Image image = new Image("/Harryho_mistnost.png");
+		mapaImageView.setImage(image);
+		hra.getHerniPlan().addObserver(this);
+	}
 	
 	/**
 	 * Metoda čte příkaz ze vstupního textového pole
 	 * a zpracuje ho...
 	 */
+	
+	
 	public void odesliPrikaz() {
 		
 		String vypis = hra.zpracujPrikaz(textVstup.getText());
@@ -83,6 +114,7 @@ public class HomeController extends GridPane implements Observer {
 			textVstup.setDisable(true);
 			odesli.setDisable(true);
 		}
+		
 		seznamVeci.getItems().clear();				
 		seznamVeci.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamVeci());
 		seznamPostav.getItems().clear();				
@@ -91,7 +123,77 @@ public class HomeController extends GridPane implements Observer {
 		seznamPriser.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPriser());
 		Image image = new Image("/" + hra.getHerniPlan().getAktualniProstor() + ".png");
 		mapaImageView.setImage(image);
+		
+		obsahBatohu();
 	}
+	
+	/**
+	 * Metoda, která zobrazuje věci, které máme v batohu, pomocí obrázků.
+	 */
+	
+	private void obsahBatohu() 
+	{			
+		batohObsah = hra.getHerniPlan().getBatoh().getObsahBatohu();
+		
+		if(batohObsah.size() != 0) 
+		{				
+			for ( int i = 0 ; i < batohObsah.size(); i++ ) 
+			{
+				if(i == 0)
+				{
+					imgView = img1;
+				}
+				else if(i == 1) 
+				{
+					imgView = img2;
+				}
+				else if(i == 2) 
+				{
+					imgView = img3;
+				}
+				else if(i == 3) 
+				{
+					imgView = img4;
+				}
+				else if(i == 4) 
+				{
+					imgView = img5;
+				}		
+					
+				Image image = new Image ("/" + batohObsah.get(i).toString() + ".jpg");	
+				imgView.setImage(image);
+			}						
+		}
+		
+		
+		
+
+		if (batohObsah.size() == 0)
+		{
+			img1.setImage(null);
+		}
+		else if (batohObsah.size() == 1)
+		{				
+			img2.setImage(null);
+		}
+		else if (batohObsah.size() == 2) 
+		{
+			img3.setImage(null);
+		}
+		else if (batohObsah.size() == 3) 
+		{			
+			img4.setImage(null);
+		}
+		else if (batohObsah.size() == 4) 
+		{			
+			img5.setImage(null);
+		}
+	}
+	
+	/**
+	 * Metoda, která načítá HTML soubor s nápovědou.
+	 * Nápověda se zobrazí v novém okně.
+	 */
 	
 	public void zobrazNapovedu(ActionEvent event) 
 	{
@@ -112,60 +214,53 @@ public class HomeController extends GridPane implements Observer {
 		catch (Exception e){}
 	}
 	
+	/**
+	 * Metoda, která ukončuje hru.
+	 * Spouští se po stisknutí možnosti Ukončit v hernim menu.
+	 */
+	
 	public void exitGame (ActionEvent event)
 	{
 		Platform.exit();
 		System.exit(0);
-
 	}
 	
+	/**
+	 * Metoda, která spouští novou hru.
+	 * Spouští se po stisknutí možnosti Nová hra v hernim menu.
+	 */
 	public void newGame (ActionEvent event)
 	{
-			try 
-			{
+		try 
+		{
 				Runtime.getRuntime().exec("java -jar seminarniprace.jar");
 				System.exit(0);
-			} 
-			catch (IOException e) {}
-		}
+		} 
+		catch (IOException e) {}
+	}
 	
-	
-		public void infoOProgramu (ActionEvent event) {
-			JOptionPane.showMessageDialog(null,
+	/**
+	 * Metoda, která zobrazuje info o programu.
+	 * Spouští se po stisknutí možnosti O programu v hernim menu.
+	 */
+	public void infoOProgramu (ActionEvent event) 
+	{
+		JOptionPane.showMessageDialog(null,
 					"<html><body><h2>Harry Lustter</h2>" +
 					"<p>Předmět: 4it115 - Softwarové inženýrství</p>" +
 					"<p>Autor: Tomáš Bušek</p>" +
 					"<p><i>Duben 2018</i></p>" +
 					"</body></html>");
-			
-	
-		}
-	
-	public void inicializuj(IHra hra)
-	{
-		
-		this.hra = hra;
-		textVypis.setText(hra.vratUvitani());
-		seznamMistnosti.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getVychody());
-		seznamVeci.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamVeci());
-		seznamPostav.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPostav());
-		seznamPriser.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getSeznamPriser());
-		
-		Image image = new Image("/Harryho_mistnost.png");
-		mapaImageView.setImage(image);
-		hra.getHerniPlan().addObserver(this);
-	}
+	}	
 
+	/**
+	 * Metoda, která updatuje hru.
+	 */
+	
 	@Override
 	public void update(Observable o, Object arg) 
 	{
 		seznamMistnosti.getItems().clear();
 		seznamMistnosti.getItems().addAll(hra.getHerniPlan().getAktualniProstor().getVychody());		
-		
-		
 	}
-	
-	
-	
-
 }

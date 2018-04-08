@@ -8,14 +8,16 @@ package com.github.bust01.seminarniprace.logika;
  */
 class PrikazUkazBatoh implements IPrikaz {  
  private static final String NAZEV = "ukaz_batoh";
+ private HerniPlan plan;
  private Batoh batoh;
 
     /***************************************************************************
      *  Konstruktor ....
      */
-    public PrikazUkazBatoh(Batoh batoh)
+    public PrikazUkazBatoh(HerniPlan plan, Batoh batoh)
     {
-        this.batoh = batoh;
+    	this.plan = plan;
+        this.batoh = plan.getBatoh();
     }
 
     

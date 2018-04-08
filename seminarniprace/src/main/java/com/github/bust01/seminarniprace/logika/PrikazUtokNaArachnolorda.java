@@ -18,7 +18,7 @@ public class PrikazUtokNaArachnolorda implements IPrikaz
     public PrikazUtokNaArachnolorda(HerniPlan plan, Batoh batoh)
     {
         this.plan = plan;
-        this.batoh = batoh;
+        this.batoh = plan.getBatoh();
     }
 
      /**

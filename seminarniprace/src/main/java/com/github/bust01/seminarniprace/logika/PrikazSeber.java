@@ -17,7 +17,7 @@ public class PrikazSeber implements IPrikaz{
      */    
     public PrikazSeber (HerniPlan plan, Batoh batoh) {
         this.plan = plan;
-        this.batoh = batoh;
+        this.batoh = plan.getBatoh();
     }
 
     /**

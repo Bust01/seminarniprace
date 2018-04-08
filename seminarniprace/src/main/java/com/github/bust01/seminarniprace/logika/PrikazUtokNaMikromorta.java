@@ -18,7 +18,7 @@ public class PrikazUtokNaMikromorta implements IPrikaz
     public PrikazUtokNaMikromorta(HerniPlan plan, Batoh batoh)
     {
          this.plan = plan;
-        this.batoh = batoh;
+        this.batoh = plan.getBatoh();
     }
 
     /**
